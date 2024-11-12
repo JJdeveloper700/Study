@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.ex04.dao.IMemberDao">
+	<select id ="getList" resultType="com.example.ex04.dto.MemberDTO">
+		SELECT * FROM tbl_member2
+	</select>
+	<select id="getMember" resultType="com.example.ex04.dto.MemberDTO">
+	  	SELECT * FROM tbl_member2 WHERE id = #{id}
+	
+	
+	</select>
+</mapper>
