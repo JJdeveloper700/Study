@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>목록 보기</h1>
+<table border="1">
+	<thead>
+		<tr>
+			<th>mno</th><th>content</th><th>title</th><th>writer</th>
+		</tr>
+	</thead>
+	<tbody>
+			<tr th:each ="memo : ${memolist}">
+			<td>[[${memo.mno}]]</td>	
+			<td>[[${memo.content}]]</td>
+			<td>[[${memo.title}]]</td>
+			<td>[[${memo.writer}]]</td>
+			</tr>
+	</tbody>
+</table>
+</body>
+</html>
