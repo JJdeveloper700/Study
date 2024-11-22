@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>목록 보기</h1>
+<hr>
+<table border="1">
+	<thead> 
+		<tr>
+			<th>mno</th><th>title</th><th>content</th><th>writer</th>
+		</tr>
+	</thead>	
+	<tbody>
+		<tr th:each ="board : ${boardlist}">
+			<td>[[${board.mno}]]</td>
+			<td><a th:href="@{/detailboard(mno=${board.mno})}">[[${board.title}]]</a></td>   <!-- <td><a th:href="@{/detailboard/{mno}(mno=${board.mno})}">[[${board.title}]]</a></td>
+			 -->
+			<td>[[${board.content}]]</td>
+			<td>[[${board.writer}]]</td>
+		</tr>
+	</tbody>
+</table>	
+</body>
+</html>
+
+
