@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.ex00.dao.IBoardDao">
+
+	<insert id="regist">
+		INSERT INTO tbl_board (title,content,writer)
+		VALUES (#{board.title},#{board.content}, #{board.writer}) 
+	</insert>
+	
+	<select id="getList">
+		SELECT * FROM tbl_board
+	</select>
+	
+	<select id="getBoard">
+		SELECT * FROM tbl_board WHERE bno = #{bno}
+	</select>
+	
+	<update id="updateBoard">
+	
+	UPDATE tbl_board SET title = #{board.title},content = #{board.content} WHERE bno = #{board.bno}	
+	
+	
+	</update>
+	
+	<delete id="deleteBoard">
+		DELETE FROM tbl_board WHERE bno = #{bno} 
+	</delete>
+	
+</mapper>

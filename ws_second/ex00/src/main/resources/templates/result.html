@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Result Page</h1>
+
+
+
+
+<hr>
+
+<p>bno : [[${board.bno}]]</p>
+<p>title : [[${board.title}]]</p>
+<p>content : [[${board.content}]]</p>
+<p>writer : [[${board.writer}]]</p>
+
+<div>
+	<form action ="updateBoard" method="get"> 
+		번호:<input type = "text" name="bno" th:value="${board.bno}" readonly/>
+		제목:<input type = "text" name="title" th:value="${board.title}"/>
+		내용:<input type = "text" name="content"th:value="${board.content}"/>
+		작성자:<input type = "text" name="writer"th:value="${board.writer}"readonly/>
+		<input type = "submit" value="수정"/>
+	</form>
+
+
+</div>
+
+
+</body>
+</html>
