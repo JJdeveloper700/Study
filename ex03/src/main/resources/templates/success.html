@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>[[${session.member.name}]]님, 로그인 성공하였습니다.</h1>
+<hr>
+<p>[[${session.member.id}]]</p>
+<p>[[${session.member.pw}]]</p>
+<p>[[${session.member.name}]]</p>
+<a href="/board/BoardRegist">게시물 등록</a>
+</body>
+</html>

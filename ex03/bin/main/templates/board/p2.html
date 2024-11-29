@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>게시물이 등록되었습니다.</h1>
+<hr>
+<p>[[${boardDto.title}]]</p>
+<p>[[${boardDto.content}]]</p>
+<p>[[${boardDto.writer}]]</p>
+<p>[[${boardDto.regdate}]]</p>
+<p>[[${boardDto.moddate}]]</p>
+<a href="/board/list">게시물 목록</a>
+</body>
+</html>
