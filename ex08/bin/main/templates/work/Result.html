@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>result Page</h1>
+<hr>
+<p>[[${work.wno}]]</p>
+<p>[[${work.id}]]</p>
+<p>[[${work.gotowork}]]</p>
+<p>[[${work.leavework}]]</p>
+
+
+
+<form action="/work/update" method="post">
+	<input type="text" name="id" th:vlaue=${work.id}>
+	<input type="text" name="leavework" th:vlaue=${work.leavework}>
+	<input type="submit" value="수정">
+
+</form>
+
+
+</body>
+</html>

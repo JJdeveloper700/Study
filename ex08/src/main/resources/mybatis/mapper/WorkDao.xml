@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.ex08.dao.IWorkDao">
+
+<insert id = "regist">
+
+	INSERT INTO work_tbl (id,gotowork,leavework) values(#{work.id},NOw(),NOW())
+</insert>
+
+<select id = "getList" resultType="com.example.ex08.dto.WorkDto">
+	Select * from work_tbl
+</select>
+
+<select id = "getWork">
+	Select * from work_tbl where id=#{work.id}
+</select>
+
+<update id = "update">
+
+	UPDATE work_tbl SET leavework = NOW() where id=#{work.id}
+
+</update>
+
+</mapper>

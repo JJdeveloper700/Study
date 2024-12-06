@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Login Main</h1>
+<hr>
+아이디:<p>[[${memberDto.id}]]</p> 
+비밀번호: <p>[[${memberDto.pw}]]</p> 
+이름:<p>[[${memberDto.name}]]</p> 
+직급:<p>[[${memberDto.rank}]]</p> 
+
+
+<a href="/loginForm">로그인 하기</a>
+</body>
+</html>
