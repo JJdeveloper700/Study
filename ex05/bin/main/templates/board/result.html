@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>result page</h1>
+<hr>
+<p>[[${board.bno}]]</p>
+<p>[[${board.title}]]</p>
+<p>[[${board.content}]]</p>
+<p>[[${board.writer}]]</p>
+<p>[[${board.regdate}]]</p>
+<p>[[${board.moddate}]]</p>
+
+
+
+<h1>수정하기</h1>
+	<form action="/board/update" method="post">
+		<input type="text" name="bno" th:value="${board.bno}" readonly/>
+		<input type="text" name="title" th:value="${board.title}"/>
+		<input type="text" name="content" th:value="${board.content}"/>
+		<input type="text" name="writer" th:value="${board.writer}"readonly/>
+		<input type="submit" value="수정">
+
+	</form>
+<h1>삭제</h1>
+<form action="/board/delete" method="get">
+	<input type="text" name="delete-bno">
+	<input type="submit" value="삭제">
+</form>
+<hr>
+<p>폼으로 댓글 달기</p>
+<div>
+	<form action="/reply/regist0" method="post"> 
+		<input type="hidden" name="bno" th:value="${board.bno}"/>
+		<input type="text" name="comments"/>
+		<input type="submit" value="등록">
+	</form>
+</div>
+<ul id="reply_list">
+
+	<th:block th:each ="reply:${replyList}">
+		<li>[[${reply.rno}]] | [[${reply.comments}]]([[${reply.writer}]]) - [[${reply.regdate}]]</li>
+	</th:block>
+</ul>
+
+	
+
+
+</body>
+</html>

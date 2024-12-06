@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.ex05.dao.IBoardDao">
+
+<insert id="regist">
+
+INSERT INTO tbl_board(title,content,writer,regdate,moddate) VALUES(#{board.title}, #{board.content}, #{board.writer},NOW(),NOW())
+
+
+
+
+</insert>
+<select id="getList">
+
+SELECT * FROM tbl_board;
+
+
+
+</select>
+
+<select id="getList2" resultType="com.example.ex05.dto.BoardDto">
+	SELECT b.bno, b.title, b.content,b.writer,COUNT(r.rno)reply_cnt,b.regdate,b.moddate
+	FROM tbl_board b LEFT OUTER JOIN  tbl_reply r 
+	ON  b.bno = r.bno 
+	GROUP BY b.bno;
+</select>
+
+<select id="getList3">
+
+select * from tbl_board Limit #{startNum}, 10;
+
+
+</select>
+
+<select id="getBoard">
+
+SELECT *FROM tbl_board WHERE bno = #{bno};  
+
+</select>
+
+<update id="update">
+
+UPDATE tbl_board set title=#{board.title},content=#{board.content},writer= #{board.writer} WHERE bno= #{board.bno}
+
+</update>
+<delete id="delete">
+
+DELETE FROM tbl_board WHERE bno = #{bno}
+
+</delete>
+
+
+</mapper>

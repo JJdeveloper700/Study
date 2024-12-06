@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.example.ex05.dao.IReplyDao">
+  
+  <insert id="regReply">
+  
+  	INSERT INTO tbl_reply(comments,writer,regdate,bno) VALUES
+	(#{reply.comments},#{reply.writer},NOW(),#{reply.bno})
+  </insert>
+  <select id="getList" resultType="com.example.ex05.dto.ReplyDto">
+  
+  select * FROM tbl_reply WHERE bno = #{bno}
+  
+  
+  
+  </select>
+  
+ 
+  
+  
+  
+  
+  
+  
+  
+  </mapper>

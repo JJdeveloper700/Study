@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>게시글 등록</h1>
+<hr>
+<form action="/board/regist" method="post">
+	제목:<input type="text" name="title"><br>
+	내용:<input type="text" name="content"><br>
+	작성자:<input type="text" name="writer" th:value="${session.member?.id}" readonly><br>
+	<input type="submit" value="등록">
+
+</form>
+</body>
+</html>
