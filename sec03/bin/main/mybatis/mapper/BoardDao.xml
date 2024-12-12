@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.example.sec03.dao.IBoardDao">
+ 
+ <insert id="regist">
+ 
+ INSERT INTO tbl_board3 values(title,content,writer,regdate,moddate)(#{board.title},#{board.content},#{board.writer},#{board.regdate},#{board.moddate})
+ 
+ 
+ </insert>
+ 
+ 
+ 
+ 
+ </mapper>

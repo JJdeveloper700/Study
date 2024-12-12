@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th=http://www.thymeleaf.org>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>회원등록하기</h1>
+<hr>
+<form action="/registProc" method="post">
+	<input type="hidden" name="_csrf" th:value="${_csrf.token}">
+	<input type="text" name="username" placeholder="inputusername...."><br>
+	<input type="text" name="password" placeholder="inputpassword...."><br>
+	<input type="text" name="name" placeholder="inputname...."><br>
+	<input type="submit" value="등록">
+	
+
+
+
+
+</form>
+</body>
+</html>
